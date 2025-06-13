@@ -3,6 +3,9 @@
 ## Host OS(자기 사용하는 PC: Windows 11) 설치 사항
 ### VirtualBox 설치
     https://download.virtualbox.org/virtualbox/7.1.10/VirtualBox-7.1.10-169112-Win.exe
+    - 설치후 재부팅 추천
+    - 설치시 만일 Visual C++ 배포 패키지를 설치하라는 메세지가 나오면
+      https://aka.ms/vs/17/release/vc_redist.x64.exe 다운로드후 설치후 VirtualBox 재설치
 ### VirtualBox Custom Nat네트워크 설정 및 포트 포워딩
     이름: NatNetwork
     IPv4 접두사: 192.168.15.0/24
@@ -13,16 +16,83 @@
     게스트 포트: 22
     
 ### Visual Studio Code 설치
-
+    https://code.visualstudio.com/download
+    - 다운로드후 설치(경로는 적당한 곳으로 설정)
+    
+### Visual Studio Code Extension 설치
+    - Korean Language Pack for Visual Studio Code 설치
+    - Remote - SSH 설치
+    
 ### Ubuntu 22.04.x 이미지 공유 경로에서 VirtualBox 이미지 다운로드
-https://drive.google.com/drive/folders/1vNSWT92fm9KSfAg8z9sqc2dsKI6hNfBo?usp=drive_link
-- Ubuntu 22.04.x 설치
-- Git, Java 17 설치 및 환경 변수
+    https://drive.google.com/drive/folders/1vNSWT92fm9KSfAg8z9sqc2dsKI6hNfBo?usp=drive_link
+    - Ubuntu 22.04.x
+    - Git, Vim, Nano, Java 17 설치 및 환경 변수
 
-## Guest OS(VirtualBox에서 실행되는 Ubuntu VM 22.04.x)
+### Ubuntu 22.04.x 이미지 다운로드 후 설정 및 확인
+    - VirtualBox에서 다운받은 이미지를 클릭해서 등록
+    - 네트워크 설정에 가서 NatNetwork로 선택(만일 안되어있는 경우 선택 및 확인)
+    - 시스템 메뉴로 이동해서 기본 프로세서(2EA), 기본 메모리(8192MB)인지 확인    
+
+### Visual Studo Code Remote SSH 설정
+    - C:\Users\사용자\.ssh 폴터가 없는 경우 생성
+    - C:\Users\사용자\.ssh에 id_rsa를 복사
+    - 파일명: config -> 밑의 내용 추가후 저장
+        Host ubuntusvr
+            HostName localhost
+            Port 22001
+            User user1
+            IdentityFile C:\Users\사용자\.ssh\id_rsa         
+    => "사용자"는 사용하는 Users(사용자)폴더의 명칭 즉 로그인 아이디임.
+    => Visual Studio Code Remote SSH 설정 방법으로도 가능함
+
 ### Docker 설치
 
+## 기타 참고 설정
 
-
-
-- 
+    - Maven 
+              sudo apt install maven
+    
+    - Git config(Local)
+    
+              git config user.name 아이디"
+              git config user.email "메일주소"
+    
+    
+    - Git config(Global)
+    
+              git config --global user.name "아이디"
+              git config --global user.email "메일주소"
+    
+    - Git Management
+    
+              git config --list
+              git config --unset user.name
+              git config --unset user.email
+    
+              git config --unset --global user.name
+              git config --unset --global user.email
+    
+              git remote -v
+              git push --force myapp-test
+              
+              git config credential.helper store
+              git config credential.helper store --global
+              
+              git config --unset credential.helper
+              git config --global --unset credential.helper
+    
+    
+    - Generate SSH Key
+     
+              ssh-keygen -t rsa -b 4096
+              cd ~/.ssh
+              cat id_rsa.pub >> ~/.ssh/authorized_keys
+              cat authorized_keys
+              cat id_rsa
+              # Usage Visual Studio Code
+              copy id_rsa on Host Windows(C:\Users\사용자\.ssh)
+    
+    - Docker Security Issues
+    
+              // Security Issues 
+              sudo chmod 666 /var/run/docker.sock or sudo chown root:docker /var/run/docker.sock
