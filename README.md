@@ -58,7 +58,56 @@
     설치후 꼭 실행
     sudo chmod 666 /var/run/docker.sock 
 
-## 기타 참고 설정
+## 기타 참고 설정          
+    - Maven 
+              sudo apt install maven
+              
+    - Git config(Local)
+    
+              git config user.name 아이디"
+              git config user.email "메일주소"
+    
+    
+    - Git config(Global)
+    
+              git config --global user.name "아이디"
+              git config --global user.email "메일주소"
+    
+    - Git Management
+    
+              git config --list
+              git config --unset user.name
+              git config --unset user.email
+    
+              git config --unset --global user.name
+              git config --unset --global user.email
+    
+              git remote -v
+              git push --force myapp-test
+              
+              git config credential.helper store
+              git config credential.helper store --global
+              
+              git config --unset credential.helper
+              git config --global --unset credential.helper
+    
+    
+    - Generate SSH Key
+     
+              ssh-keygen -t rsa -b 4096
+              cd ~/.ssh
+              cat id_rsa.pub >> ~/.ssh/authorized_keys
+              cat authorized_keys
+              cat id_rsa
+              # Usage Visual Studio Code
+              copy id_rsa on Host Windows(C:\Users\사용자\.ssh)
+    
+    - Docker Security Issues
+    
+              // Security Issues 
+              sudo chmod 666 /var/run/docker.sock or sudo chown root:docker /var/run/docker.sock
+
+## kafka 설정(docker-compose)
     - docker-compose-kafka.yml
     #############################################################################################
         services:
@@ -181,51 +230,4 @@
               KAFKA_CLUSTERS_0_NAME: local
               KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka-1:9092,kafka-2:9092,kafka-3:9092
               KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper-1:2181,zookeeper-2:2181,zookeeper-3:2181
-    #############################################################################################                 
-    - Maven 
-              sudo apt install maven
-    
-    - Git config(Local)
-    
-              git config user.name 아이디"
-              git config user.email "메일주소"
-    
-    
-    - Git config(Global)
-    
-              git config --global user.name "아이디"
-              git config --global user.email "메일주소"
-    
-    - Git Management
-    
-              git config --list
-              git config --unset user.name
-              git config --unset user.email
-    
-              git config --unset --global user.name
-              git config --unset --global user.email
-    
-              git remote -v
-              git push --force myapp-test
-              
-              git config credential.helper store
-              git config credential.helper store --global
-              
-              git config --unset credential.helper
-              git config --global --unset credential.helper
-    
-    
-    - Generate SSH Key
-     
-              ssh-keygen -t rsa -b 4096
-              cd ~/.ssh
-              cat id_rsa.pub >> ~/.ssh/authorized_keys
-              cat authorized_keys
-              cat id_rsa
-              # Usage Visual Studio Code
-              copy id_rsa on Host Windows(C:\Users\사용자\.ssh)
-    
-    - Docker Security Issues
-    
-              // Security Issues 
-              sudo chmod 666 /var/run/docker.sock or sudo chown root:docker /var/run/docker.sock
+    #############################################################################################  
