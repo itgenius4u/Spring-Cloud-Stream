@@ -60,6 +60,7 @@
 
 ## 기타 참고 설정
     - docker-compose-kafka.yml
+    #############################################################################################
         services:
           zookeeper:
             image: confluentinc/cp-zookeeper:7.4.4
@@ -95,6 +96,7 @@
               KAFKA_CLUSTERS_0_NAME: local
               KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
               KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
+    #############################################################################################              
 
     - Maven 
               sudo apt install maven
