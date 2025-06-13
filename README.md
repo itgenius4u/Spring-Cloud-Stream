@@ -45,6 +45,9 @@
     => "사용자"는 사용하는 Users(사용자)폴더의 명칭 즉 로그인 아이디임.
     => Visual Studio Code Remote SSH 설정 방법으로도 가능함
 
+
+## Guest OS(Ubuntu VM: Ubuntu 22.04.x)
+    - Visual Studio Code Remote SSH로 접속 후
 ### Docker 설치
     https://docs.docker.com/engine/install/ubuntu/
         - Install using the apt repository
@@ -52,6 +55,8 @@
     https://docs.docker.com/engine/install/linux-postinstall/
         - Manage Docker as a non-root user
             1, 2, 3, 4 실행    
+    설치후 꼭 실행
+    sudo chmod 666 /var/run/docker.sock 
 
 ## 기타 참고 설정
     - Maven 
