@@ -46,9 +46,14 @@
     => Visual Studio Code Remote SSH 설정 방법으로도 가능함
 
 ### Docker 설치
+    https://docs.docker.com/engine/install/ubuntu/
+        - Install using the apt repository
+            1, 2, 3 실행        
+    https://docs.docker.com/engine/install/linux-postinstall/
+        - Manage Docker as a non-root user
+            1, 2, 3, 4 실행    
 
 ## 기타 참고 설정
-
     - Maven 
               sudo apt install maven
     
