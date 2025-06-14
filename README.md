@@ -88,7 +88,7 @@ https://drive.google.com/drive/folders/1vNSWT92fm9KSfAg8z9sqc2dsKI6hNfBo?usp=dri
     sudo mv kafka_2.13-2.7.0 /usr/local/kafka
     mkdir /tmp/kafka-logs
     sudo su
-    /usr/local/kafka/bin/kafka-server-start.sh -daemon
+    /usr/local/kafka/bin/kafka-server-start.sh -daemon /usr/local/kafka/config/server.properties
     /usr/local/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --replication-factor 1 --partitions 1 --topic test
     /usr/local/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic test
     /usr/local/kafka/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic test
