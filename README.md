@@ -118,6 +118,12 @@ https://drive.google.com/drive/folders/1vNSWT92fm9KSfAg8z9sqc2dsKI6hNfBo?usp=dri
     ~/kafka_2.13-2.7.0/bin/kafka-server-stop.sh 
     ~/apache-zookeeper-3.5.9-bin/bin/zkServer.sh stop    
 
+    - Producer, Consumer Console 테스트
+    ~/kafka_2.13-2.7.0/bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --replication-factor 1 --partitions 1 --topic test
+    ~/kafka_2.13-2.7.0/bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic test
+    ~/kafka_2.13-2.7.0/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic test
+    ~/kafka_2.13-2.7.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
+
     - docker-compose-kafka.yml
     #############################################################################################
         services:
