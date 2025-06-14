@@ -118,6 +118,18 @@ https://drive.google.com/drive/folders/1vNSWT92fm9KSfAg8z9sqc2dsKI6hNfBo?usp=dri
     ~/kafka_2.13-2.7.0/bin/kafka-server-stop.sh 
     ~/apache-zookeeper-3.5.9-bin/bin/zkServer.sh stop    
 
+    - docker-compose-kafka.yml
+    #############################################################################################
+        services:
+          kafka-ui:
+            image: provectuslabs/kafka-ui:latest
+            ports:
+              - "9999:8080"
+            environment:
+              KAFKA_CLUSTERS_0_NAME: my-cluster
+              KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: 192.168.15.11:9092
+    #############################################################################################
+
 ## 기타 참고 설정          
     - Maven 
               sudo apt install maven
