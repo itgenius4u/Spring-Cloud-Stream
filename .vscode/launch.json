@@ -9,6 +9,16 @@
             "projectName": "my-app",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ProducerAppApplication<producer-app>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.test.producer_app.ProducerAppApplication",
+            "projectName": "producer-app",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
