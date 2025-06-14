@@ -1,5 +1,8 @@
 # Spring-Cloud-Stream
 
+## 공유 경로
+https://drive.google.com/drive/folders/1vNSWT92fm9KSfAg8z9sqc2dsKI6hNfBo?usp=drive_link
+
 ## Host OS(자기 사용하는 PC: Windows 11) 설치 사항
 ### VirtualBox 설치
     https://download.virtualbox.org/virtualbox/7.1.10/VirtualBox-7.1.10-169112-Win.exe
