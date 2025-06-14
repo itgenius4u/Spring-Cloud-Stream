@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: producer-app
+  cloud:
+    stream:
+      bindings:
+        send-out-0:
+          destination: example-topic
+      default-binder: kafka
+  kafka:
+    bootstrap-servers: localhost:29092
+
+server:
+  port: 8080
