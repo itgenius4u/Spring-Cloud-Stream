@@ -65,7 +65,7 @@ https://drive.google.com/drive/folders/1vNSWT92fm9KSfAg8z9sqc2dsKI6hNfBo?usp=dri
     설치후 꼭 실행
     sudo chmod 666 /var/run/docker.sock 
 
-### Apache Kafka 설치 및 실행
+### Apache Kafka 설치 및 실행(교재: 관리자 권한)
     * Standalone server
     tar -zxf apache-zookeeper-3.5.9-bin.tar.gz
     sudo mv apache-zookeeper-3.5.9-bin /usr/local/zookeeper
@@ -93,6 +93,24 @@ https://drive.google.com/drive/folders/1vNSWT92fm9KSfAg8z9sqc2dsKI6hNfBo?usp=dri
     /usr/local/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic test
     /usr/local/kafka/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic test
     /usr/local/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
+
+### Apache Kafka 설치 및 실행(사용자 권한)
+    - apache zookeeper을 Ubuntu VM 
+    tar -zxf apache-zookeeper-3.5.9-bin.tar.gz
+    cp ~/apache-zookeeper-3.5.9-bin/conf/zoo_sample.cfg ~/apache-zookeeper-3.5.9-bin/conf/zoo.cfg
+    ~/apache-zookeeper-3.5.9-bin/bin/zkServer.sh start
+    
+    - apache kafka을 Ubuntu VM 
+    tar -zxf kafka_2.13-2.7.0.tgz
+    ~/kafka_2.13-2.7.0/bin/kafka-server-start.sh -daemon ~/kafka_2.13-2.7.0/config/server.properties
+    
+    - kafka 시작 순서
+    ~/apache-zookeeper-3.5.9-bin/bin/zkServer.sh start
+    ~/kafka_2.13-2.7.0/bin/kafka-server-start.sh -daemon ~/kafka_2.13-2.7.0/config/server.properties
+    
+    - kafka 종료 순서
+    ~/kafka_2.13-2.7.0/bin/kafka-server-stop.sh 
+    ~/apache-zookeeper-3.5.9-bin/bin/zkServer.sh stop
 
 ## 기타 참고 설정          
     - Maven 
