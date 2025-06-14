@@ -66,7 +66,7 @@ https://drive.google.com/drive/folders/1vNSWT92fm9KSfAg8z9sqc2dsKI6hNfBo?usp=dri
     sudo chmod 666 /var/run/docker.sock 
 
 ### Apache Kafka 설치 및 실행
-    - Standalone server
+    * Standalone server
     tar -zxf apache-zookeeper-3.5.9-bin.tar.gz
     mv apache-zookeeper-3.5.9-bin /usr/local/zookeeper
     mkdir -p /var/lib/zookeeper
@@ -77,8 +77,9 @@ https://drive.google.com/drive/folders/1vNSWT92fm9KSfAg8z9sqc2dsKI6hNfBo?usp=dri
     EOF
     /usr/local/zookeeper/bin/zkServer.sh start
 
-    # telnet이 없는 경우
+    # telnet이 없는 경우(telnet not found)
     sudo apt install telnet
+    
     # zookeeper 2181로 접속되는지 확
     telnet localhost 2181
 
