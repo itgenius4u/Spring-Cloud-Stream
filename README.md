@@ -76,6 +76,7 @@ https://drive.google.com/drive/folders/1vNSWT92fm9KSfAg8z9sqc2dsKI6hNfBo?usp=dri
     dataDir=/var/lib/zookeeper
     clientPort=2181
     EOF
+    exit
     /usr/local/zookeeper/bin/zkServer.sh start
 
     # telnet이 없는 경우(telnet not found)
