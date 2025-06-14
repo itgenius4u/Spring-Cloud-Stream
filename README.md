@@ -102,15 +102,21 @@ https://drive.google.com/drive/folders/1vNSWT92fm9KSfAg8z9sqc2dsKI6hNfBo?usp=dri
     
     - apache kafka을 Ubuntu VM 
     tar -zxf kafka_2.13-2.7.0.tgz
-    ~/kafka_2.13-2.7.0/bin/kafka-server-start.sh -daemon ~/kafka_2.13-2.7.0/config/server.properties
+    ~/apache-zookeeper-3.5.9-bin/bin/zkServer.sh start
     
     - kafka 시작 순서
     ~/apache-zookeeper-3.5.9-bin/bin/zkServer.sh start
+    echo "listeners=PLAINTEXT://0.0.0.0:9092" >> ~/kafka_2.13-2.7.0/config/server.properties
+    echo "advertised.listeners=PLAINTEXT://192.168.15.11:9092" >> ~/kafka_2.13-2.7.0/config/server.properties
+    
     ~/kafka_2.13-2.7.0/bin/kafka-server-start.sh -daemon ~/kafka_2.13-2.7.0/config/server.properties
+    
+    - kafka UI 접속 경로
+    http://localhost:9999
     
     - kafka 종료 순서
     ~/kafka_2.13-2.7.0/bin/kafka-server-stop.sh 
-    ~/apache-zookeeper-3.5.9-bin/bin/zkServer.sh stop
+    ~/apache-zookeeper-3.5.9-bin/bin/zkServer.sh stop    
 
 ## 기타 참고 설정          
     - Maven 
