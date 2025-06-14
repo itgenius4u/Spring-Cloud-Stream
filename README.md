@@ -85,8 +85,7 @@ https://drive.google.com/drive/folders/1vNSWT92fm9KSfAg8z9sqc2dsKI6hNfBo?usp=dri
     telnet localhost 2181
 
     tar -zxf kafka_2.13-2.7.0.tgz
-    sudo su
-    mv kafka_2.13-2.7.0 /usr/local/kafka
+    sudo mv kafka_2.13-2.7.0 /usr/local/kafka
     mkdir /tmp/kafka-logs
     /usr/local/kafka/bin/kafka-server-start.sh -daemon
     /usr/local/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --replication-factor 1 --partitions 1 --topic test
