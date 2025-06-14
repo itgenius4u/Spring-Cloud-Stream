@@ -71,7 +71,7 @@ https://drive.google.com/drive/folders/1vNSWT92fm9KSfAg8z9sqc2dsKI6hNfBo?usp=dri
     sudo mv apache-zookeeper-3.5.9-bin /usr/local/zookeeper
     sudo su
     mkdir -p /var/lib/zookeeper
-    cp > /usr/local/zookeeper/conf/zoo.cfg << EOF
+    cat > /usr/local/zookeeper/conf/zoo.cfg << EOF
     tickTime=2000
     dataDir=/var/lib/zookeeper
     clientPort=2181
