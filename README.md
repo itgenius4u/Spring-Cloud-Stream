@@ -68,9 +68,10 @@ https://drive.google.com/drive/folders/1vNSWT92fm9KSfAg8z9sqc2dsKI6hNfBo?usp=dri
 ### Apache Kafka 설치 및 실행
     * Standalone server
     tar -zxf apache-zookeeper-3.5.9-bin.tar.gz
-    sudo mv apache-zookeeper-3.5.9-bin /usr/local/zookeeper
-    sudo mkdir -p /var/lib/zookeeper
-    sudo cp > /usr/local/zookeeper/conf/zoo.cfg << EOF
+    sudo su
+    mv apache-zookeeper-3.5.9-bin /usr/local/zookeeper
+    mkdir -p /var/lib/zookeeper
+    cp > /usr/local/zookeeper/conf/zoo.cfg << EOF
     tickTime=2000
     dataDir=/var/lib/zookeeper
     clientPort=2181
