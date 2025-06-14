@@ -18,6 +18,10 @@ https://drive.google.com/drive/folders/1vNSWT92fm9KSfAg8z9sqc2dsKI6hNfBo?usp=dri
     게스트 IP: 192.168.15.11
     게스트 포트: 22
     
+### Ubuntu VM 로그인 접속 정보
+    아이디: user1
+    비밀번호: 1234
+    
 ### Visual Studio Code 설치
     https://code.visualstudio.com/download
     - 다운로드후 설치(경로는 적당한 곳으로 설정)
