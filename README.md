@@ -65,6 +65,32 @@ https://drive.google.com/drive/folders/1vNSWT92fm9KSfAg8z9sqc2dsKI6hNfBo?usp=dri
     설치후 꼭 실행
     sudo chmod 666 /var/run/docker.sock 
 
+### Apache Kafka 설치 및 실행
+    - Standalone server
+    tar -zxf apache-zookeeper-3.5.9-bin.tar.gz
+    mv apache-zookeeper-3.5.9-bin /usr/local/zookeeper
+    mkdir -p /var/lib/zookeeper
+    cp > /usr/local/zookeeper/conf/zoo.cfg << EOF
+    tickTime=2000
+    dataDir=/var/lib/zookeeper
+    clientPort=2181
+    EOF
+    /usr/local/zookeeper/bin/zkServer.sh start
+
+    # telnet이 없는 경우
+    sudo apt install telnet
+    # zookeeper 2181로 접속되는지 확
+    telnet localhost 2181
+
+    tar -zxf kafka_2.13-2.7.0.tgz
+    mv kafka_2.13-2.7.0 /usr/local/kafka
+    mkdir /tmp/kafka-logs
+    /usr/local/kafka/bin/kafka-server-start.sh -daemon
+    /usr/local/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --replication-factor 1 --partitions 1 --topic test
+    /usr/local/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic test
+    /usr/local/kafka/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic test
+    /usr/local/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
+
 ## 기타 참고 설정          
     - Maven 
               sudo apt install maven
