@@ -23,7 +23,6 @@ public class OrderController {
         OrderCreated order = new OrderCreated(UUID.randomUUID().toString(), productName);
         orderRepository.save(order); // 데이터베이스에 저장
         streamBridge.send("order-out-0", order); // 바인딩 이름에 맞춰 보냄
-        
         return ResponseEntity.ok("Order sent: " + order.getOrderId());
     }
 }
