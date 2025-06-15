@@ -1,0 +1,14 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: consumer-app
+  cloud:
+    stream:
+      bindings:
+        receive-in-0:
+          destination: example-topic
+          group: consumer-group
+      default-binder: kafka
+  kafka:
+    bootstrap-servers: localhost:29092
