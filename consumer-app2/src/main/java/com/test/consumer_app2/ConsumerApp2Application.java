@@ -9,5 +9,10 @@ public class ConsumerApp2Application {
 	public static void main(String[] args) {
 		SpringApplication.run(ConsumerApp2Application.class, args);
 	}
+	@Bean
+	public Consumer<String> timeConsumer() {
+		return time -> System.out.println("Consumed: " + time);
+	}
+
 
 }
