@@ -20,6 +20,7 @@ public class OrderController {
     public ResponseEntity<String> createOrder(@RequestParam String productName) {
         OrderCreated order = new OrderCreated(UUID.randomUUID().toString(), productName);
         streamBridge.send("order-out-0", order); // 바인딩 이름에 맞춰 보냄
+        
         return ResponseEntity.ok("Order sent: " + order.getOrderId());
     }
 }
