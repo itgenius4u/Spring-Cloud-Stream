@@ -70,6 +70,17 @@
             "mainClass": "com.test.inventory_service.InventoryServiceApplication",
             "projectName": "inventory-service",
             "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=43523 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=inventory-service"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MailServiceApplication<mail-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.test.mail_service.MailServiceApplication",
+            "projectName": "mail-service",
+            "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
     ]
