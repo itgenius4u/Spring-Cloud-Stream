@@ -13,6 +13,4 @@ public class ConsumerApp2Application {
 	public Consumer<String> timeConsumer() {
 		return time -> System.out.println("Consumed: " + time);
 	}
-
-
 }
