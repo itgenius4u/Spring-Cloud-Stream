@@ -18,6 +18,17 @@
             "mainClass": "com.test.producer_app.ProducerAppApplication",
             "projectName": "producer-app",
             "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=40869 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=producer-app"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ConsumerAppApplication<consumer-app>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.test.consumer_app.ConsumerAppApplication",
+            "projectName": "consumer-app",
+            "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
     ]
