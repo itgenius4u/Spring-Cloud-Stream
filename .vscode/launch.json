@@ -30,6 +30,16 @@
             "projectName": "consumer-app",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ProducerApp2Application<producer-app2>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.test.producer_app2.ProducerApp2Application",
+            "projectName": "producer-app2",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
